@@ -4,6 +4,7 @@ import me.unfamousthomas.Commands.Admin.setprefix;
 import me.unfamousthomas.Commands.Tools.pingCommand;
 import me.unfamousthomas.Commands.Tools.userinfoCommand;
 import me.unfamousthomas.Commands.helpCommand;
+import me.unfamousthomas.Commands.music.*;
 import me.unfamousthomas.Utils.ICommand;
 import me.unfamousthomas.Utils.constants;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
@@ -20,6 +21,12 @@ public class CommandManager {
         addCommand(new setprefix());
         addCommand(new helpCommand(this));
         addCommand(new userinfoCommand());
+        addCommand(new joinCommand());
+        addCommand(new leaveCommand());
+        addCommand(new playCommand());
+        addCommand(new pauseCommand());
+        addCommand(new volumeCommand());
+        //addCommand(new queueCommand());
     }
     private void addCommand(ICommand command) {
         if(!commands.containsKey(command.getInvoke())) {
